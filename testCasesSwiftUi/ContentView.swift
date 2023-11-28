@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var inrtext : String = ""
+    @State var dlrtext : String = ""
+    var viewModel = Converter()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Doller To INR")
+                .bold()
+                .font(.title2)
+            TextField("INR Value", text: $inrtext)
+                .textFieldStyle(.roundedBorder)
+                .onChange(of:inrtext) { newValue in
+                    dlrtext = viewModel.convertInrToUsd(inr: newValue)
+                }
+            Text("To")
+            TextField("DOLLER Value", text: $dlrtext)
+                .textFieldStyle(.roundedBorder)
         }
         .padding()
     }

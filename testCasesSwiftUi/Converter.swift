@@ -8,7 +8,7 @@
 import Foundation
 class Converter{
     func convertInrToUsd(inr:String)->String{
-        let usdRate = 83.38
+        let usdRate = 22.22
         let inrvalue = Double(inr) ?? 0
         if inrvalue.isZero || inrvalue.isZero || inrvalue <= 0 {
             return "Enter the Positive value"
@@ -20,4 +20,5 @@ class Converter{
         
         return "\(String(format: "%.2f", inrvalue*usdRate))"
     }
+
 }

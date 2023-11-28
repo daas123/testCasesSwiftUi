@@ -12,7 +12,7 @@ class ViewModel:ObservableObject{
     @Published var convertedText = ""
     let converter = Converter()
     
-    func convertMoney(){
+    func convertMoney(dlr:Int){
         converter.convertInrToUsd(inr: text)
         self.hideKeyBoard()
     }
